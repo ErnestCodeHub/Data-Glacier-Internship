@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>California Housing Price Prediction</title>
+</head>
+<body>
+    <h1>California Housing Price Prediction</h1>
+    <form action="/predict" method="post">
+        <label for="medinc">Median Income (in tens of thousands):</label>
+        <input type="text" id="medinc" name="medinc" placeholder="e.g., 8.3252" required><br><br>
+
+        <label for="houseage">House Age (years):</label>
+        <input type="text" id="houseage" name="houseage" placeholder="e.g., 41" required><br><br>
+
+        <label for="averooms">Average Rooms:</label>
+        <input type="text" id="averooms" name="averooms" placeholder="e.g., 6.984" required><br><br>
+
+        <label for="avebedrms">Average Bedrooms:</label>
+        <input type="text" id="avebedrms" name="avebedrms" placeholder="e.g., 1.023" required><br><br>
+
+        <label for="population">Population:</label>
+        <input type="text" id="population" name="population" placeholder="e.g., 322" required><br><br>
+
+        <label for="aveoccup">Average Occupancy:</label>
+        <input type="text" id="aveoccup" name="aveoccup" placeholder="e.g., 2.555" required><br><br>
+
+        <label for="latitude">Latitude:</label>
+        <input type="text" id="latitude" name="latitude" placeholder="e.g., 37.88" required><br><br>
+
+        <label for="longitude">Longitude:</label>
+        <input type="text" id="longitude" name="longitude" placeholder="e.g., -122.23" required><br><br>
+
+        <button type="submit">Predict Price</button>
+    </form>
+
+    {% if prediction_text %}
+        <h2>{{ prediction_text }}</h2>
+    {% endif %}
+</body>
+</html>
